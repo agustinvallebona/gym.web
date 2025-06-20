@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agustín Fitness</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- CABECERA -->
+  <header>
+    <h1>Agustín<span>Fitness</span></h1>
+    <nav>
+      <a href=> <h2 class="typewriter-loop" id="typewriter"></h2></a>
+      <a href="#gym">Gym</a>
+      <a href="#calistenia">Calistenia</a>
+      <a href="#crossfit">Crossfit</a>
+      <a href="#boxeo">Boxeo</a>
+      <a href="#galeria">Galería</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+<!-- secition -->
+
+<section id="gym" class="section seccion-fondo seccion-gym">
+  <h2>Zona Gym</h2>
+  <p>Entrenamientos personalizados con pesas y máquinas para ganar fuerza y volumen muscular.</p>
+</section>
+
+<section id="calistenia" class="section seccion-fondo seccion-calistenia">
+  <h2>Calistenia</h2>
+  <p>Ejercicios con peso corporal para mejorar fuerza, control, movilidad y equilibrio.</p>
+</section>
+
+<section id="crossfit" class="section seccion-fondo seccion-crossfit">
+  <h2>Crossfit</h2>
+  <p>Rutinas intensas de alta exigencia para trabajar fuerza, cardio y agilidad.</p>
+</section>
+
+<section id="boxeo" class="section seccion-fondo seccion-boxeo">
+  <h2>Boxeo</h2>
+  <p>Entrenamiento completo con técnica, defensa, resistencia y coordinación.</p>
+</section>
+
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="section">
+    <h2>Galería de nuestra comunidad</h2>
+    <div class="galeria">
+      <img src="imagenes/cros-png.webp" alt="Entrenamiento 1">
+      <img src="imagenes/gym.png" alt="Entrenamiento 2">
+      <img src="imagenes/pesas.png" alt="Entrenamiento 3">
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section">
+    <h2>Contacto</h2>
+    <p>Escribime para más información o reservar una clase.</p>
+    <a href="https://wa.me/598091686560" class="boton">WhatsApp Directo</a>
+  </section>
+
+  <!-- PIE -->
+  <footer>
+    <p>&copy; 2025 Agustín Fitness</p>
+  </footer>
+  <!-- efecto maq de escribir -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const texto = "Entrena sin límites y a tu estilo.";
+    const elemento = document.getElementById("typewriter");
+    let i = 0;
+    let escribiendo = true;
+
+    function escribirBorrar() {
+      if (escribiendo) {
+        if (i <= texto.length) {
+          elemento.textContent = texto.substring(0, i);
+          i++;
+        } else {
+          escribiendo = false;
+          setTimeout(escribirBorrar, 1000); // Espera antes de borrar
+          return;
+        }
+      } else {
+        if (i >= 0) {
+          elemento.textContent = texto.substring(0, i);
+          i--;
+        } else {
+          escribiendo = true;
+        }
+      }
+      setTimeout(escribirBorrar, 80); // Velocidad de escritura y borrado
+    }
+
+    escribirBorrar();
+  });
+</script>
+
+  <script src="script.js"></script>
+</body>
+</html>
